@@ -21,8 +21,10 @@
   },
   "homepage": "https://github.com/NicolasGula/Ecommerce-with-MERN#readme",
   "dependencies": {
+    "colors": "^1.4.0",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^6.7.0"
   },
   "devDependencies": {
     "concurrently": "^7.5.0",
