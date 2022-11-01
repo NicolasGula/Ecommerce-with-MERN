@@ -1,13 +1,16 @@
 import { Link, useParams } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
 import Rating from "../Rating/Rating";
-import products from "../../products";
+import getProductById from "../../services/getProductById";
 
 const ProductScreen = () => {
+  const [product, setProduct] = useState([]);
   const { id } = useParams();
-  console.log(id);
 
-  const product = products.find((p) => p._id === id);
+  useEffect(() => {
+    getProductById(id).then((data) => setProduct(data));
+  }, []);
 
   return (
     <>
