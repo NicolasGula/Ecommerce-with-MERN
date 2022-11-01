@@ -27,10 +27,16 @@ const Header = () => {
           >
             <Nav>
               <LinkContainer to="/cart">
-                <Nav.Link>🛒 Mi Carrito</Nav.Link>
+                <Nav.Link>
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <span className="mx-2">Mi Carrito</span>
+                </Nav.Link>
               </LinkContainer>
               <LinkContainer to="/login">
-                <Nav.Link>👤 Iniciar Sesion</Nav.Link>
+                <Nav.Link>
+                  <i class="fa-solid fa-user"></i>
+                  <span className="mx-2">Iniciar Sesion</span>
+                </Nav.Link>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>
