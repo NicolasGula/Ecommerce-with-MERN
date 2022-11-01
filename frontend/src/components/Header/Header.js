@@ -1,7 +1,6 @@
 import Container from "react-bootstrap/Container";
 import { Nav, NavDropdown, Navbar } from "react-bootstrap";
 import logo from "../../assets/logo.png";
-import styles from "./header.module.scss";
 
 const Header = () => {
   return (
