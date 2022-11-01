@@ -1,0 +1,22 @@
+{
+  "name": "ecommercemern",
+  "version": "1.0.0",
+  "description": "Ecommerce build with Mongo-Express-React-Node",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasGula/Ecommerce-with-MERN.git"
+  },
+  "author": "Nicolas Gula",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NicolasGula/Ecommerce-with-MERN/issues"
+  },
+  "homepage": "https://github.com/NicolasGula/Ecommerce-with-MERN#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
