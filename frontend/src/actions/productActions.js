@@ -1,51 +1,45 @@
 import axios from "axios";
+
 import {
-  PRODUCT_LIST_REQUEST,
-  PRODUCT_LIST_SUCCESS,
-  PRODUCT_LIST_FAIL,
-  PRODUCT_DETAIL_FAIL,
-  PRODUCT_DETAIL_REQUEST,
-  PRODUCT_DETAIL_SUCCESS,
-} from "../constants/productConstants";
+  productListRequest,
+  productListSuccess,
+  productListFail,
+} from "../reducers/productListReducers";
+
+import {
+  productDetailFail,
+  productDetailRequest,
+  productDetailSuccess,
+} from "../reducers/productDetailReducers";
 
 export const listProducts = () => async (dispatch) => {
   try {
-    dispatch({ type: PRODUCT_LIST_REQUEST });
-
+    dispatch(productListRequest());
     const { data } = await axios.get("/api/products");
-
-    dispatch({
-      type: PRODUCT_LIST_SUCCESS,
-      payload: data,
-    });
+    dispatch(productListSuccess(data));
   } catch (error) {
-    dispatch({
-      type: PRODUCT_LIST_FAIL,
-      payload:
+    dispatch(
+      productListFail(
         error.response && error.response.data.message
           ? error.response.data.message
-          : error.message,
-    });
+          : error.message
+      )
+    );
   }
 };
 
 export const listProductDetails = (id) => async (dispatch) => {
   try {
-    dispatch({ type: PRODUCT_DETAIL_REQUEST });
-
+    dispatch(productDetailRequest());
     const { data } = await axios.get(`/api/products/${id}`);
-
-    dispatch({
-      type: PRODUCT_DETAIL_SUCCESS,
-      payload: data,
-    });
+    dispatch(productDetailSuccess(data));
   } catch (error) {
-    dispatch({
-      type: PRODUCT_DETAIL_FAIL,
-      payload:
+    dispatch(
+      productDetailFail(
         error.response && error.response.data.message
           ? error.response.data.message
-          : error.message,
-    });
+          : error.message
+      )
+    );
   }
 };
